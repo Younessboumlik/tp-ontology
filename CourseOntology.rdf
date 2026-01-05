@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Homework"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#organizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#organizes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#teaches">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Assistant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Assistant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#teaches"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#LaboratoryCourse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Homework -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Homework">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#LaboratoryCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#LaboratoryCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#RegularCourse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#teaches"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#RegularCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#RegularCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Course"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Homework"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/younessboumlik/ontologies/2026/0/untitled-ontology-3#Teacher"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
